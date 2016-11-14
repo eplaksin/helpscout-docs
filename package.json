@@ -1,0 +1,17 @@
+{
+  "name": "helpscout-docs",
+  "version": "0.1.0",
+  "description": "HelpScout Docs API for Node.js",
+  "main": "index.js",
+  "keywords": [
+    "helpscout",
+    "api"
+  ],
+  "author": "Evgeny Plaksin <me@eplaksin.com>",
+  "repository": "git://github.com/eplaksin/helpscout-docs.git",
+  "license": "MIT",
+  "dependencies": {
+    "querystring": "0.2.0",
+    "request": "2.78.0"
+  }
+}

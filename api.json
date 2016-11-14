@@ -1,0 +1,120 @@
+{
+  "domain": "https://docsapi.helpscout.net/",
+  "version": "v1",
+  "endpoints": {
+    "articles": {
+      "getAllByCollection": {
+        "path": "collections/{id}/articles",
+        "method": "GET"
+      },
+      "getAllByCategory": {
+        "path": "categories/{id}/articles",
+        "method": "GET"
+      },
+      "get": {
+        "path": "articles/{id}",
+        "method": "GET"
+      },
+      "create": {
+        "path": "articles",
+        "method": "POST"
+      },
+      "update": {
+        "path": "articles/{id}",
+        "method": "PUT"
+      },
+      "delete": {
+        "path": "articles/{id}",
+        "method": "DELETE"
+      }
+    },
+    "categories": {
+      "getAllByCollection": {
+        "path": "collections/{id}/categories",
+        "method": "GET"
+      },
+      "get": {
+        "path": "categories/{id}",
+        "method": "GET"
+      },
+      "create": {
+        "path": "categories",
+        "method": "POST"
+      },
+      "update": {
+        "path": "categories/{id}",
+        "method": "PUT"
+      },
+      "delete": {
+        "path": "categories/{id}",
+        "method": "DELETE"
+      }
+    },
+    "collections": {
+      "getAll": {
+        "path": "collections",
+        "method": "GET"
+      },
+      "get": {
+        "path": "collections/{id}",
+        "method": "GET"
+      },
+      "create": {
+        "path": "collections",
+        "method": "POST"
+      },
+      "update": {
+        "path": "collections/{id}",
+        "method": "PUT"
+      },
+      "delete": {
+        "path": "collections/{id}",
+        "method": "DELETE"
+      }
+    },
+    "redirects": {
+      "getAllBySite": {
+        "path": "redirects/site/{id}",
+        "method": "GET"
+      },
+      "get": {
+        "path": "redirects/{id}",
+        "method": "GET"
+      },
+      "create": {
+        "path": "redirects",
+        "method": "POST"
+      },
+      "update": {
+        "path": "redirects/{id}",
+        "method": "PUT"
+      },
+      "delete": {
+        "path": "redirects/{id}",
+        "method": "DELETE"
+      }
+    },
+    "sites": {
+      "getAll": {
+        "path": "sites",
+        "method": "GET"
+      },
+      "get": {
+        "path": "sites/{id}",
+        "method": "GET"
+      },
+      "create": {
+        "path": "sites",
+        "method": "POST"
+      },
+      "update": {
+        "path": "sites/{id}",
+        "method": "PUT"
+      },
+      "delete": {
+        "path": "sites/{id}",
+        "method": "DELETE"
+      }
+    }
+  }
+}
