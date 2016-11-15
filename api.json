@@ -11,8 +11,24 @@
         "path": "categories/{id}/articles",
         "method": "GET"
       },
+      "search": {
+        "path": "search/articles",
+        "method": "GET"
+      },
+      "getRelated": {
+        "path": "articles/{id}/related",
+        "method": "GET"
+      },
+      "getRevisions": {
+        "path": "articles/{id}/revisions",
+        "method": "GET"
+      },
       "get": {
         "path": "articles/{id}",
+        "method": "GET"
+      },
+      "getRevision": {
+        "path": "revisions/{id}",
         "method": "GET"
       },
       "create": {
@@ -23,9 +39,38 @@
         "path": "articles/{id}",
         "method": "PUT"
       },
+      "upload": {
+        "path": "articles/upload",
+        "method": "POST",
+        "contentType": "multipart/form-data"
+      },
+      "updateViewCount": {
+        "path": "articles/{id}/views",
+        "method": "PUT"
+      },
       "delete": {
         "path": "articles/{id}",
         "method": "DELETE"
+      },
+      "saveDraft": {
+        "path": "articles/{id}/drafts",
+        "method": "PUT"
+      },
+      "deleteDraft": {
+        "path": "articles/{id}/drafts",
+        "method": "DELETE"
+      }
+    },
+    "assets": {
+      "createArticleAsset": {
+        "path": "assets/article",
+        "method": "POST",
+        "contentType": "multipart/form-data"
+      },
+      "createSettingsAsset": {
+        "path": "assets/settings",
+        "method": "POST",
+        "contentType": "multipart/form-data"
       }
     },
     "categories": {
@@ -43,6 +88,10 @@
       },
       "update": {
         "path": "categories/{id}",
+        "method": "PUT"
+      },
+      "updateOrder": {
+        "path": "collections/{id}/categories",
         "method": "PUT"
       },
       "delete": {
@@ -81,6 +130,10 @@
         "path": "redirects/{id}",
         "method": "GET"
       },
+      "find": {
+        "path": "redirects",
+        "method": "GET"
+      },
       "create": {
         "path": "redirects",
         "method": "POST"
@@ -109,6 +162,10 @@
       },
       "update": {
         "path": "sites/{id}",
+        "method": "PUT"
+      },
+      "transfer": {
+        "path": "sites/transfer/{id}",
         "method": "PUT"
       },
       "delete": {

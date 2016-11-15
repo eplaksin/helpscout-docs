@@ -32,6 +32,9 @@ function HelpScoutDocs(apiKey) {
       callback = function(){};
     }
 
+    var id = data.id || null;
+    var fields = data.fields || {};
+
     var requestOptions = {
       method: reqParams.method,
       auth: {
@@ -40,21 +43,27 @@ function HelpScoutDocs(apiKey) {
       }
     };
 
-    if (~reqParams.path.indexOf('{id}') && !data.id) {
+    if (~reqParams.path.indexOf('{id}') && !id) {
       throw new Error('Please specify ID to call API: ' + reqParams.path);
     }
 
-    reqParams.path = reqParams.path.replace('{id}', data.id);
+    reqParams.path = reqParams.path.replace('{id}', id);
 
-    if (reqParams.method === 'GET' && data.fields) {
-      reqParams.path += '?' + queryString.stringify(data.fields);
+    if (reqParams.method === 'GET' && fields) {
+      reqParams.path += '?' + queryString.stringify(fields);
     }
 
     requestOptions.uri = apiConfig.domain + '/' + apiConfig.version + '/' + reqParams.path;
 
+    if (reqParams.contentType == 'multipart/form-data') {
+      fields.key = apiKey;
+    }
+
     if (~['POST', 'PUT'].indexOf(reqParams.method)) {
-      requestOptions.headers = {'Content-Type': 'application/json'};
-      requestOptions.body = JSON.stringify(data.fields || {});
+      requestOptions.headers = {
+        'Content-Type': reqParams.contentType || 'application/json'
+      };
+      requestOptions.body = JSON.stringify(fields);
     }
 
     request(requestOptions, function(err, response, body){
