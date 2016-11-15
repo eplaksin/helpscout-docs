@@ -1,2 +1,2 @@
 # helpscout-docs
-HelpScout Docs API for Node.js
+HelpScout Docs API library for Node.js
