@@ -10,15 +10,18 @@ function HelpScoutDocs(apiKey) {
 
   if (!apiKey) { throw new Error('Please provide Help Scout Docs API key!'); }
 
+  // create endpoints objects and methods
   for (var section in apiConfig.endpoints) {
     this[section] = {};
     for (var method in apiConfig.endpoints[section]) {
       this[section][method] = function(reqParams){
+        // bind default params (URI, HTTP request method) for each method
         return makeRequest.bind(null, reqParams);
       }(apiConfig.endpoints[section][method]);
     }
   }
 
+  // unified function to perform API call
   function makeRequest(reqParams, data, callback) {
 
     if (typeof data == 'function') {
