@@ -1,6 +1,6 @@
 {
   "name": "helpscout-docs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "HelpScout Docs API library for Node.js",
   "main": "index.js",
   "keywords": [
