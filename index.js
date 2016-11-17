@@ -24,6 +24,8 @@ function HelpScoutDocs(apiKey) {
   // unified function to perform API call
   function makeRequest(reqParams, data, callback) {
 
+    reqParams = JSON.parse(JSON.stringify(reqParams));
+
     if (typeof data == 'function') {
       callback = data;
       data = {};
@@ -49,11 +51,11 @@ function HelpScoutDocs(apiKey) {
 
     reqParams.path = reqParams.path.replace('{id}', id);
 
-    if (reqParams.method === 'GET' && fields) {
+    if (reqParams.method === 'GET' && Object.keys(fields).length) {
       reqParams.path += '?' + queryString.stringify(fields);
     }
 
-    requestOptions.uri = apiConfig.domain + '/' + apiConfig.version + '/' + reqParams.path;
+    requestOptions.uri = apiConfig.domain + apiConfig.version + '/' + reqParams.path;
 
     if (reqParams.contentType == 'multipart/form-data') {
       fields.key = apiKey;
